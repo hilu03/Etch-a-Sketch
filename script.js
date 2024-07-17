@@ -16,3 +16,9 @@ function renderGrid() {
 }
 
 renderGrid();
+const cells = document.querySelectorAll(".cell");
+cells.forEach(cell => {
+  cell.addEventListener("mouseenter", () => {
+    cell.style.backgroundColor = "gray";
+  });
+});
