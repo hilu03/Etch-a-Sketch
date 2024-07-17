@@ -37,13 +37,16 @@ function addHoverEffect() {
 
 const inputButton = document.querySelector(".input-button");
 inputButton.addEventListener("click", () => {
-  let size = prompt("Please input number of cell per row.\n(Note: Maximum number is 100!)", 16);
+  let size = Number(prompt("Please input number of cell per row.\n(Note: Maximum number is 100!)", 16));
   if (size != null) {
-    if (size > 100) {
+    if (!Number.isInteger(size)) {
+      alert("Please input an INTEGER! Try again!");
+    }
+    else if (size > 100) {
       alert("Maximum number is 100! Try again!");
     }
     else {
-      renderGrid(Number(size));
+      renderGrid(size);
     }
   }
 });
