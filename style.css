@@ -1,3 +1,26 @@
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.input-button {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.input-button:hover {
+  background-color: yellow;
+  color: black;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -7,10 +30,12 @@
 
 .row {
   display: flex;
+  width: 640px;
+  justify-content: center;
+  align-items: center;
 }
 
 .cell {
-  width: 20px;
-  height: 20px;
   border: 1px solid black;
 }
+
