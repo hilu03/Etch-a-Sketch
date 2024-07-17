@@ -34,13 +34,12 @@ function addHoverEffect() {
       const red = Math.floor(Math.random() * (max - min + 1)) + min ;
       const green = Math.floor(Math.random() * (max - min + 1)) + min ;
       const blue = Math.floor(Math.random() * (max - min + 1)) + min ;
-      const opacity = cell.style.opacity;
-      console.log(Number(opacity));
       cell.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     });
   });
 }
 
+renderGrid();
 const inputButton = document.querySelector(".input-button");
 inputButton.addEventListener("click", () => {
   let size = Number(prompt("Please input number of cell per row.\n(Note: Maximum number is 100!)", 16));
@@ -57,4 +56,10 @@ inputButton.addEventListener("click", () => {
   }
 });
 
-renderGrid();
+const clearButton = document.querySelector(".clear-button");
+clearButton.addEventListener("click", () => {
+  const cells = document.querySelectorAll(".cell");
+  cells.forEach(cell => {
+    cell.style.backgroundColor = "white";
+  })
+});
