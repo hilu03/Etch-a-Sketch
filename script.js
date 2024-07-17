@@ -30,7 +30,13 @@ function addHoverEffect() {
   const cells = document.querySelectorAll(".cell");
   cells.forEach(cell => {
     cell.addEventListener("mouseenter", () => {
-      cell.style.backgroundColor = "gray";
+      const max = 255, min = 0;
+      const red = Math.floor(Math.random() * (max - min + 1)) + min ;
+      const green = Math.floor(Math.random() * (max - min + 1)) + min ;
+      const blue = Math.floor(Math.random() * (max - min + 1)) + min ;
+      const opacity = cell.style.opacity;
+      console.log(Number(opacity));
+      cell.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
     });
   });
 }
@@ -42,8 +48,8 @@ inputButton.addEventListener("click", () => {
     if (!Number.isInteger(size)) {
       alert("Please input an INTEGER! Try again!");
     }
-    else if (size > 100) {
-      alert("Maximum number is 100! Try again!");
+    else if (size > 100 || size < 1) {
+      alert("Please input number between 1 and 100! Try again!");
     }
     else {
       renderGrid(size);
